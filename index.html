@@ -58,7 +58,7 @@
 
     .top-block {
       display: grid;
-      grid-template-columns: 1fr 290px;
+      grid-template-columns: 1fr minmax(300px, 440px);
       align-items: start;
       gap: 1.25rem;
       min-height: 320px;
@@ -115,14 +115,17 @@
 
 
     .micro-note {
-      width: 290px;
+      width: 100%;
+      max-width: 440px;
       border-left: 4px solid #000;
       padding-left: 20px;
-      font-size: 18pt;
+      font-size: 16pt;
       line-height: 1.35;
       color: #2d2d2d;
       justify-self: end;
       margin-top: 0.2rem;
+      position: relative;
+      left: 40px;
     }
 
     .top-profile-pic {
@@ -710,6 +713,10 @@
       z-index: 1;
     }
 
+    .detail-sheet-gallery.gallery-single .detail-gallery-nav {
+      display: none;
+    }
+
     .detail-sheet-copy {
       flex: 1;
       min-width: 0;
@@ -790,6 +797,10 @@
     .detail-doc-row {
       margin-top: 1.25rem;
       flex-shrink: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 0.75rem;
     }
 
     .detail-doc-row[hidden] {
@@ -846,6 +857,9 @@
         padding-left: 0;
         padding-top: 1.1rem;
         margin-top: 0;
+        margin-left: 0;
+        position: static;
+        left: auto;
         font-size: clamp(1rem, 4.5vw, 1.2rem);
       }
 
@@ -1002,7 +1016,8 @@
       </div>
       <div class="micro-note">
         Computer Science + Robotics @ Caltech<br><br>
-        Software Engineering Intern @ Apple
+        Software Engineering Intern @ Apple<br><br>
+        Product Design @ ArtCenter<br>(Dual-enrolled)
         <div class="top-links">
           <a class="resume-btn" href="documents/Resume.pdf" target="_blank" rel="noopener">Resume</a>
           <a class="icon-btn" href="https://www.linkedin.com/in/samantha-chang8/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
@@ -1023,15 +1038,15 @@
         <div class="mini-thumb-wrap">
         <img class="mini-thumb" src="images/project6-big.png" alt="">
         </div>
-        <p class="mini-meta"><span class="mini-meta-label">Researcher</span> <span class="mini-meta-entity">Caltech Autonomous Bipedal Robotics Lab</span></p>
+        <p class="mini-meta"><span class="mini-meta-label">Research Assistant</span> <span class="mini-meta-entity">Advanced Mechanical Bipedal Robotics Lab @ Caltech</span></p>
         <p class="mini-title"><span>Ball Catching Humanoid Robot</span></p>
         <span class="mini-rule" aria-hidden="true"></span>
       </a>
       <a class="mini-card" href="#project-2" data-project="walker-inventeam">
         <div class="mini-thumb-wrap">
-        <img class="mini-thumb" src="images/project1-small.png" alt="">
+        <img class="mini-thumb" src="images/gallery_walker.png" alt="">
         </div>
-        <p class="mini-meta"><span class="mini-meta-label">Project Lead</span> <span class="mini-meta-entity">MIT InvenTeam | $7,500 Grant</span></p>
+        <p class="mini-meta"><span class="mini-meta-label">Project Lead</span> <span class="mini-meta-entity">Lemelson-MIT InvenTeam</span></p>
         <p class="mini-title"><span>Autonomously Navigating Walker for Elderly Adults</span></p>
         <span class="mini-rule" aria-hidden="true"></span>
       </a>
@@ -1039,7 +1054,7 @@
         <div class="mini-thumb-wrap">
         <img class="mini-thumb" src="images/project2-small.png" alt="">
         </div>
-        <p class="mini-meta"><span class="mini-meta-label">Team Captain</span> <span class="mini-meta-entity">FIRST Robotics Top 24 Team</span></p>
+        <p class="mini-meta"><span class="mini-meta-label">Captain and Programming Lead</span> <span class="mini-meta-entity">FIRST Robotics Competition</span></p>
         <p class="mini-title"><span>FIRST Robotics Competition Cone-Stacking Robot</span></p>
         <span class="mini-rule" aria-hidden="true"></span>
       </a>
@@ -1050,13 +1065,13 @@
         <div class="mini-thumb-wrap">
         <img class="mini-thumb" src="images/project3-big.png" alt="">
         </div>
-        <p class="mini-meta"><span class="mini-meta-label">Programming Lead</span> <span class="mini-meta-entity">MIT InvenTeam | $10,000 Grant</span></p>
+        <p class="mini-meta"><span class="mini-meta-label">Project Lead</span> <span class="mini-meta-entity">Lemelson-MIT InvenTeam</span></p>
         <p class="mini-title"><span>Drowning Detection Wristband</span></p>
         <span class="mini-rule" aria-hidden="true"></span>
       </a>
       <a class="mini-card" href="#project-2" data-project="vex-ai">
         <div class="mini-thumb-wrap">
-        <img class="mini-thumb" src="images/project4-small.png" alt="">
+        <img class="mini-thumb" src="images/vexai1.png" alt="">
         </div>
         <p class="mini-meta"><span class="mini-meta-label">Programming Lead</span> <span class="mini-meta-entity">VEX AI Robotics Competition</span></p>
         <p class="mini-title"><span>Autonomous Competition Ball-Shooting Robot</span></p>
@@ -1064,10 +1079,37 @@
       </a>
       <a class="mini-card" href="#project-3" data-project="xprize-mask">
         <div class="mini-thumb-wrap">
-        <img class="mini-thumb" src="images/project5-small.png" alt="">
+        <img class="mini-thumb" src="images/mask_bg_main.png" alt="">
         </div>
-        <p class="mini-meta"><span class="mini-meta-label">Programming Lead</span> <span class="mini-meta-entity">XPRIZE Mask Challenge</span></p>
+        <p class="mini-meta"><span class="mini-meta-label">Competitor</span> <span class="mini-meta-entity">XPRIZE Nex-Gen Mask Challenge</span></p>
         <p class="mini-title"><span>Temperature and Humidity Controlled Face Mask</span></p>
+        <span class="mini-rule" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <section class="card-grid-3" aria-label="Featured cards row three">
+      <a class="mini-card" href="#project-1" data-project="frc-ball-shooter">
+        <div class="mini-thumb-wrap">
+        <img class="mini-thumb" src="images/frc-second1.png" alt="">
+        </div>
+        <p class="mini-meta"><span class="mini-meta-label">Programming Lead</span> <span class="mini-meta-entity">FIRST Robotics Competition</span></p>
+        <p class="mini-title"><span>FIRST Robotics Competition Ball-Shooting Robot</span></p>
+        <span class="mini-rule" aria-hidden="true"></span>
+      </a>
+      <a class="mini-card" href="#project-2" data-project="vex-block-stack">
+        <div class="mini-thumb-wrap">
+        <img class="mini-thumb" src="images/vex1.png" alt="">
+        </div>
+        <p class="mini-meta"><span class="mini-meta-label">Programming Lead</span> <span class="mini-meta-entity">VEX Robotics Competition</span></p>
+        <p class="mini-title"><span>VEX Block-Stacking Competition Robot</span></p>
+        <span class="mini-rule" aria-hidden="true"></span>
+      </a>
+      <a class="mini-card" href="#project-3" data-project="solar-trash-robot">
+        <div class="mini-thumb-wrap">
+        <img class="mini-thumb" src="images/project1-small.png" alt="">
+        </div>
+        <p class="mini-meta"><span class="mini-meta-label">Project Lead</span> <span class="mini-meta-entity">National Invention Convention</span></p>
+        <p class="mini-title"><span>Solar-Powered Trash Collecting Robot</span></p>
         <span class="mini-rule" aria-hidden="true"></span>
       </a>
     </section>
@@ -1088,6 +1130,7 @@
             <img class="detail-gallery-slide is-active" src="images/project1-small.png" alt="">
             <img class="detail-gallery-slide" src="images/project2-small.png" alt="">
             <img class="detail-gallery-slide" src="images/project3-small.png" alt="">
+            <img class="detail-gallery-slide" src="images/project1-small.png" alt="">
             <div class="detail-gallery-nav">
               <button type="button" class="detail-gallery-prev" id="detail-gallery-prev" aria-label="Previous image">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1116,7 +1159,11 @@
             <ul class="detail-tech-tags" id="detail-tech-tags"></ul>
           </div>
           <div class="detail-doc-row" id="detail-doc-row" hidden>
-            <a class="detail-doc-btn" id="detail-doc-link" href="documents/walker-documentation.pdf" target="_blank" rel="noopener">Read documentation</a>
+            <a class="detail-doc-btn" id="detail-doc-link" href="documents/walker_patent.pdf" target="_blank" rel="noopener">View Patent</a>
+            <a class="detail-doc-btn" id="detail-doc-documentation-link" href="documents/walker_documentation.pdf" target="_blank" rel="noopener">Read Notebook</a>
+          </div>
+          <div class="detail-doc-row" id="detail-doc-row-vex" hidden>
+            <a class="detail-doc-btn" id="detail-doc-vex-notebook-link" href="https://7700ai.notion.site/7700R-Engineering-Notebook-9a3e10e0647d4fc1acee3404f98bba00?pvs=25#8975c226965a405f8c816a8ddda5e745" target="_blank" rel="noopener noreferrer">Read engineering notebook</a>
           </div>
         </div>
       </div>
@@ -1158,6 +1205,7 @@
       var bulletsEl = document.getElementById('detail-sheet-bullets');
       var techTagsEl = document.getElementById('detail-tech-tags');
       var docRow = document.getElementById('detail-doc-row');
+      var docRowVex = document.getElementById('detail-doc-row-vex');
       var gallerySlides = document.querySelectorAll('#detail-sheet-gallery .detail-gallery-slide');
       var galleryPrev = document.getElementById('detail-gallery-prev');
       var galleryNext = document.getElementById('detail-gallery-next');
@@ -1166,38 +1214,144 @@
 
       var DETAIL_BULLETS = {
         'ball-humanoid': [
-          'Ball-catching research on a Unitree G1 humanoid.',
-          'Vision and motion with SAM2 and OpenCV.'
+          'Work on improving ball-catching capabilities of a Unitree G1 humanoid robot',
+          'Use SAM2 and OpenCV for vision and motion sensing'
         ],
         'walker-inventeam': [
-          'Led MIT InvenTeam (15); $7.5K grant; EurekaFest.',
-          'A* (C++) with UWB, LiDAR, IR, Bluetooth; custom housings; electrical, CAD, in-house fab.'
+          'Led a team of 15 students, managing the technical documentation and communicating with the team',
+          'Integrated ultra-wideband, LiDAR, infrared, and Bluetooth sensors with an A* navigation algorithm (C++)',
+          'Assembled the electrical system, assisted in design with CAD, manufactured parts in-house',
+          'Secured $7,500 in grant funding from MIT'
         ],
         'first-robot': [
-          'Captain (100+); Java autonomy; programming lead; LabVIEW/vision benches.',
-          'Beach Blitz, LA Regional, Worlds Top 24 (2022–23).'
+          'Led the 100+ person team, which included managing the technical documentation and team communication in 2023',
+          'Programmed the autonomous control and perception systems in Java, leading the Programming subteam in 2022',
+          'Won the Los Angeles Regional competition and the Archimedes division (Top 24 team) at the World Championships'
         ],
         'drowning-wristband': [
-          'MIT InvenTeam lead; $10K grant; wearable water-safety prototype.',
-          'Embedded sensing and software for real-time monitoring.'
+          'Developed an algorithm in C++ for a drowning detection and prevention wristband using underwater Bluetooth and vital sensors for drowning detection',
+          'Developed an iOS app (Swift) that connected with the wristband to receive drowning alerts and display data',
+          'Awarded a $10,000 grant from MIT; showcased at MIT\'s EurekaFest'
         ],
         'vex-ai': [
-          'PyTorch perception on Jetson (cameras + IR).',
-          'VEX AI Worlds Top 6; Think Award (2021).'
+          'Developed an autonomous perception system with cameras and infrared using PyTorch on an NVIDIA Jetson',
+          'Won Top 6 at the World Championships in the fully autonomous robotics competition'
         ],
         'xprize-mask': [
-          'XPRIZE Mask: temp/humidity sensing and embedded control.',
-          'Wearable comfort; hardware–software integration and competition docs.'
+          'Programmed temperature/humidity sensing and control systems in C++',
+          'Developed a compatible iOS app, integrating Arduino Internet of Things (IoT) to interact with the sensors',
+          'Ranked Top 25/1,000 submissions worldwide in the XPRIZE Nex-Gen Mask Challenge'
+        ],
+        'vex-block-stack': [
+          'Programmed the code that was used on the robot during competitions',
+          'Presented the robot and design process to judges to win awards',
+          'Won the Google Signature Event, California State Tournament, 11 local events, and qualified for the World Championships in 2020'
+        ],
+        'solar-trash-robot': [
+          'Led a team of 3 to develop a product and submit it to the Invention Convention competition',
+          'Created a solar-powered robot that collects trash on the beach',
+          'Programmed and created the electronics system that controlled the robot',
+          'Designed the majority of the robot with 3d CAD modeling',
+          'Used several manufacturing machines to make our product mass-producible and cost-efficient'
+        ],
+        'frc-ball-shooter': [
+          'Served as the lead of the programming subteam in my sophomore year, which included communicating with leadership on the progress of the robot, teaching 15 members how to program the robot in Java, and programming the majority of code on the robot',
+          'Won the Beach Blitz Competition and was finalist at the Tidal Tumble Competition',
+          'Set up test benches for testing with LabView'
         ]
       };
 
+      var DEFAULT_GALLERY_SRCS = [
+        'images/project1-small.png',
+        'images/project2-small.png',
+        'images/project3-small.png',
+        'images/project1-small.png'
+      ];
+
+      var DETAIL_GALLERY_BY_PROJECT = {
+        'ball-humanoid': [
+          'images/project6-big.png',
+          'images/project6-big.png',
+          'images/project6-big.png',
+          'images/project6-big.png'
+        ],
+        'walker-inventeam': [
+          'images/walker1.png',
+          'images/walker2.png',
+          'images/walker3.png',
+          'images/walker4.png'
+        ],
+        'xprize-mask': [
+          'images/mask1.png',
+          'images/mask_bg_square.png',
+          'images/mask1.png',
+          'images/mask_bg_square.png'
+        ],
+        'drowning-wristband': [
+          'images/drowning1.png',
+          'images/drowning2.png',
+          'images/project3-big.png',
+          'images/drowning2.png'
+        ],
+        'vex-ai': [
+          'images/project4-small.png',
+          'images/vexai1.png',
+          'images/project4-small.png',
+          'images/vexai1.png'
+        ],
+        'first-robot': [
+          'images/frc2.png',
+          'images/project2-small.png',
+          'images/frc2.png',
+          'images/project2-small.png'
+        ],
+        'frc-ball-shooter': [
+          'images/frc-second1.png',
+          'images/frc-second2.png',
+          'images/frc-second1.png',
+          'images/frc-second2.png'
+        ],
+        'vex-block-stack': [
+          'images/vex4.png',
+          'images/vex2.png',
+          'images/vex3.png',
+          'images/vex1.png'
+        ],
+        'solar-trash-robot': [
+          'images/project1-small.png',
+          'images/project1-small.png',
+          'images/project1-small.png',
+          'images/project1-small.png'
+        ]
+      };
+
+      function setGalleryImages(projectKey) {
+        var srcs = DETAIL_GALLERY_BY_PROJECT[projectKey] || DEFAULT_GALLERY_SRCS;
+        for (var g = 0; g < gallerySlides.length; g += 1) {
+          gallerySlides[g].src = srcs[g] || DEFAULT_GALLERY_SRCS[g];
+        }
+      }
+
+      function galleryIsSingleImage(projectKey) {
+        var srcs = DETAIL_GALLERY_BY_PROJECT[projectKey] || DEFAULT_GALLERY_SRCS;
+        var first = srcs[0] || DEFAULT_GALLERY_SRCS[0];
+        for (var i = 1; i < gallerySlides.length; i += 1) {
+          var u = srcs[i] !== undefined ? srcs[i] : DEFAULT_GALLERY_SRCS[i];
+          if (u !== first) return false;
+        }
+        return true;
+      }
+
       var DETAIL_TECHNOLOGIES = {
-        'ball-humanoid': ['SAM2', 'OpenCV', 'ROS'],
-        'walker-inventeam': ['C++', 'LiDAR', 'A*'],
-        'first-robot': ['Java', 'LabVIEW', 'OpenCV'],
-        'drowning-wristband': ['C++', 'BLE', 'CAD'],
-        'vex-ai': ['PyTorch', 'NVIDIA Jetson', 'Python'],
-        'xprize-mask': ['Python', 'CAD', 'C++']
+        'ball-humanoid': ['ROS', 'Python', 'OpenCV', 'SAM2'],
+        'walker-inventeam': ['C++', 'LiDAR', 'UWB', 'CAD'],
+        'first-robot': ['Java', 'OpenCV', 'Control Systems'],
+        'drowning-wristband': ['C++', 'Arduino', 'Bluetooth', 'Swift'],
+        'vex-ai': ['Python', 'OpenCV', 'NVIDIA Jetson'],
+        'xprize-mask': ['C++', 'Arduino', 'Swift'],
+        'frc-ball-shooter': ['Java', 'LabVIEW', 'OpenCV'],
+        'vex-block-stack': ['C++', 'Control Systems'],
+        'solar-trash-robot': ['C++', 'Arduino', 'Solar Power', 'CAD']
       };
 
       function setTechTags(projectKey) {
@@ -1235,6 +1389,8 @@
       }
 
       function stepGallery(delta) {
+        var galleryEl = document.getElementById('detail-sheet-gallery');
+        if (galleryEl && galleryEl.classList.contains('gallery-single')) return;
         var n = gallerySlides.length;
         if (n === 0) return;
         setGallerySlide((galleryIndex + delta + n) % n);
@@ -1252,6 +1408,14 @@
         setTechTags(projectKey);
         if (docRow) {
           docRow.hidden = projectKey !== 'walker-inventeam';
+        }
+        if (docRowVex) {
+          docRowVex.hidden = projectKey !== 'vex-ai';
+        }
+        setGalleryImages(projectKey);
+        var galleryEl = document.getElementById('detail-sheet-gallery');
+        if (galleryEl) {
+          galleryEl.classList.toggle('gallery-single', galleryIsSingleImage(projectKey));
         }
         sheet.classList.add('is-open');
         sheet.setAttribute('aria-hidden', 'false');
